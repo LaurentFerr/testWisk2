@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Saisie Resultats</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+
+    <!-- CSS personnel -->
+    <link href="css/perso.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+    <div class="container alignbott" id="colorbleu2">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-9">
+                <div class="page-header">
+                    <h1>Résultats</br><small>Air Bowl Show 1er manche</small></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container alignbott" id="colorblanc">
+
+        <!--Le conteneur formulaire-->
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-10">
+                <h1>Choisissez discipline et catégorie d'âge :<br/></h1>
+            </div>
+        </div>
+
+        <!--Les Dropdowns-->
+        <form>
+            <div class="row">
+                <!--
+                <div class="col-md-offset-2 col-md-2">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Discipline
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a onclick="bmxSet();">BMX</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a onclick="rollerSet();">Roller</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a onclick="trottSet();">Trott</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a>Skate</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+-->
+                <div class="col-md-offset-2 col-sm-2">
+                    <h4>Discipline</h4>
+                    <a class="btn btn-primary btn-select">
+                        <input type="hidden" class="btn-select-input" id="" name="" value="" />
+                        <span class="btn-select-value">Select an Item</span>
+                        <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+                        <ul>
+                            <li>BMX</li>
+                            <li>Roller</li>
+                            <li>Trott</li>
+                            <li>Skate</li>
+                        </ul>
+                    </a>
+                </div>
+
+                <div class="col-md-offset-2 col-md-2">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Catégorie
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><a onclick="juniorSet();">Junior</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a onclick="riderSet();">Rider</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a onclick="masterSet();">Master</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--Le Formulaire-->
+
+            <div class="row">
+                <div class="col-md-offset-2 col-md-3">
+                    <div class="form-group">
+                        <label for="Nom">Nom</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Nom">
+                    </div>
+                </div>
+
+                <div class="col-md-offset-1 col-md-3">
+                    <div class="form-group">
+                        <label for="Prenom">Prénom</label>
+                        <input type="text" class="form-control" id="prenom" placeholder="Prénom">
+                    </div>
+                </div>
+                <div class="col-md-offset-2 col-md-3">
+                    <div class="form-group">
+                        <label for="Club">Club</label>
+                        <input type="text" class="form-control" id="club" placeholder="Club/Team">
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-1">
+                    <div class="form-group">
+                        <label for="Rank">Rank</label>
+                        <input type="text" class="form-control" id="rank" placeholder="Rank">
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-1">
+                    <div class="form-group">
+                        <label for="Points">Points</label>
+                        <input type="text" class="form-control" id="points" placeholder="Points">
+                    </div>
+                </div>
+
+                <!-- Les boutons -->
+
+                <div class="col-md-offset-4 col-md-1">
+                    <button type="button" class="btn btn-primary" value="ajouter" onclick="ajouterrider();">Enregistrer</button>
+                </div>
+                <div class="col-md-offset-1 col-md-1">
+                    <button type="button" class="btn btn-warning" value="reset" onclick="reset();">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--    FIN DU FORMULAIRE-->
+
+    <div class="container alignbott" id="colorblanc">
+
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <table class="table table-hover table-condensed" id="tablebmx">
+                    <h1>Résultats BMX</h1>
+                    <tbody id="tbody">
+                        <tr>
+                            <th>#</th>
+                            <th>Prénom</th>
+                            <th>Nom</th>
+                            <th>Club/Team</th>
+                            <th>Points</th>
+                            <th>Points cumulés</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class="container alignbott" id="colorblanc">
+
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <table class="table table-hover table-condensed">
+                    <h1>Résultats Roller</h1>
+                    <tr>
+                        <th>#</th>
+                        <th>Prenom</th>
+                        <th>Nom</th>
+                        <th>Points</th>
+                        <th>Points cumulés</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Victor</td>
+                        <td>Ferréol</td>
+                        <td>162</td>
+                        <td>162</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Steven</td>
+                        <td>Dijoux</td>
+                        <td>160</td>
+                        <td>160</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class="container alignbott" id="colorblanc">
+
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <table class="table table-hover table-condensed">
+                    <h1>Résultats Trott</h1>
+                    <tr>
+                        <th>#</th>
+                        <th>Prenom</th>
+                        <th>Nom</th>
+                        <th>Points</th>
+                        <th>Points cumulés</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Victor</td>
+                        <td>Ferréol</td>
+                        <td>162</td>
+                        <td>162</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Steven</td>
+                        <td>Dijoux</td>
+                        <td>160</td>
+                        <td>160</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Table -->
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+    <!-- Javascript personnel -->
+    <script src="js/perso.js"></script>
+
+</body>
+
+</html>
